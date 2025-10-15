@@ -9,20 +9,16 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 
 # Setup Docker
-echo "[*] Setting up Docker..."
-sudo apt install -y docker.io
-sudo apt install -y docker-compose
-sudo usermod -aG docker $USER
-sudo systemctl enable docker --now
+#echo "[*] Setting up Docker..."
+#sudo apt install -y docker.io
+#sudo apt install -y docker-compose
+#sudo usermod -aG docker $USER
+#sudo systemctl enable docker --now
 
 # Setup Bloodhound
 echo "[*] Setting up Bloodhound..."
-cd /tmp
-wget https://github.com/SpecterOps/bloodhound-cli/releases/latest/download/bloodhound-cli-linux-amd64.tar.gz
-tar -xvzf bloodhound-cli-linux-amd64.tar.gz
-chmod +x ./bloodhound-cli
-sudo ./bloodhound-cli install
-cd
+sudo apt install -y neo4j
+sudo apt install -y bloodhound
 
 # Setup Metasploit
 echo "[*] Setting up Metasploit..."
