@@ -32,3 +32,7 @@ sudo msfdb init
 # Setup seclists
 echo "[*] Setting up seclists..."
 sudo apt install -y seclists
+
+# Setup wordlists
+echo "[*] Setting up wordlists..."
+sudo gunzip /usr/share/wordlists/rockyou.txt.gz
