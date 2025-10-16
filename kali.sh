@@ -13,6 +13,10 @@ echo "[*] Setting up Bloodhound..."
 sudo apt install -y neo4j
 sudo apt install -y bloodhound
 
+# Setup crackmapexec
+echo "[*] Setting up crackmapexec..."
+sudo apt install -y crackmapexec
+
 # Setup Docker
 #echo "[*] Setting up Docker..."
 #sudo apt install -y docker.io
