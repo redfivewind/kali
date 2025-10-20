@@ -8,6 +8,10 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt autoremove -y
 
+# Setup awscli
+echo "[*] Setting up awscli..."
+sudo apt install -y awscli
+
 # Setup Bloodhound
 echo "[*] Setting up Bloodhound..."
 sudo apt install -y neo4j
