@@ -33,6 +33,10 @@ echo "[*] Setting up Metasploit..."
 sudo systemctl enable postgresql --now
 sudo msfdb init
 
+# Setup pacu
+echo "[*] Setting up pacu..."
+sudo apt install -y pacu
+
 # Setup seclists
 echo "[*] Setting up seclists..."
 sudo apt install -y seclists
