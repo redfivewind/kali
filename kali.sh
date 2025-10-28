@@ -4,6 +4,7 @@ USER=$(whoami)
 
 # Update system
 echo "[*] Updating the system..."
+sudo dpkg --add-architecture i386
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt autoremove -y
@@ -21,6 +22,10 @@ sudo apt install -y bloodhound
 echo "[*] Setting up crackmapexec..."
 sudo apt install -y crackmapexec
 
+# Setup DKMS
+echo "[*] Setting up DKMS..."
+sudo apt install -y dkms
+
 # Setup dnscat2
 echo "[*] Setting up dnscat2..."
 sudo apt install -y dnscat2-client
@@ -32,6 +37,10 @@ sudo apt install -y dnscat2-server
 #sudo apt install -y docker-compose
 #sudo usermod -aG docker $USER
 #sudo systemctl enable docker --now
+
+# Setup generic Linux headers
+echo "[*] Setting up the generic Linux headers..."
+sudo apt install -y linux-headers-generic
 
 # Setup Metasploit
 echo "[*] Setting up Metasploit..."
@@ -57,8 +66,6 @@ sudo apt install -y veil
 # Setup Wine
 echo "[*] Setting up Wine..."
 sudo apt install -y wine
-sudo dpkg --add-architecture i386
-sudo apt update
 sudo apt install -y wine32
 
 # Setup wordlists
