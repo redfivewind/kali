@@ -21,6 +21,11 @@ sudo apt install -y bloodhound
 echo "[*] Setting up crackmapexec..."
 sudo apt install -y crackmapexec
 
+# Setup dnscat2
+echo "[*] Setting up dnscat2..."
+sudo apt install -y dnscat2-client
+sudo apt install -y dnscat2-server
+
 # Setup Docker
 #echo "[*] Setting up Docker..."
 #sudo apt install -y docker.io
@@ -33,6 +38,10 @@ echo "[*] Setting up Metasploit..."
 sudo systemctl enable postgresql --now
 sudo msfdb init
 
+# Setup mingw-w64
+echo "[*] Setting up mingw-w64..."
+sudo apt install -y mingw-w64
+
 # Setup pacu
 echo "[*] Setting up pacu..."
 sudo apt install -y pacu
@@ -40,6 +49,17 @@ sudo apt install -y pacu
 # Setup seclists
 echo "[*] Setting up seclists..."
 sudo apt install -y seclists
+
+# Setup Veil
+echo "[*] Setting up Veil..."
+sudo apt install -y veil
+
+# Setup Wine
+echo "[*] Setting up Wine..."
+sudo apt install -y wine
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt install -y wine32
 
 # Setup wordlists
 echo "[*] Setting up wordlists..."
