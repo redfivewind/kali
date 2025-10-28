@@ -62,6 +62,7 @@ sudo apt install -y seclists
 # Setup Veil
 echo "[*] Setting up Veil..."
 sudo apt install -y veil
+veil --setup
 
 # Setup Wine
 echo "[*] Setting up Wine..."
