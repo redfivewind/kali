@@ -18,6 +18,10 @@ echo "[*] Setting up Bloodhound..."
 sudo apt install -y neo4j
 sudo apt install -y bloodhound
 
+# Setup Chisel
+echo "[*] Setting up Chisel..."
+sudo apt install -y chisel
+
 # Setup crackmapexec
 echo "[*] Setting up crackmapexec..."
 sudo apt install -y crackmapexec
