@@ -59,6 +59,10 @@ sudo apt install -y pacu
 echo "[*] Setting up seclists..."
 sudo apt install -y seclists
 
+# Setup sshuttle
+echo "[*] Setting up sshuttle..."
+sudo apt install -y sshuttle
+
 # Setup Veil
 echo "[*] Setting up Veil..."
 sudo apt install -y veil
