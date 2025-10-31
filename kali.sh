@@ -67,6 +67,14 @@ sudo apt install -y seclists
 echo "[*] Setting up sshuttle..."
 sudo apt install -y sshuttle
 
+# Setup subfinder
+echo "[*] Setting up subfinder..."
+sudo apt install -y subfinder
+
+# Setup sublist3r
+echo "[*] Setting up sublist3r..."
+sudo apt install -y sublist3r
+
 # Setup Veil
 echo "[*] Setting up Veil..."
 sudo apt install -y veil
