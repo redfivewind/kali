@@ -80,3 +80,7 @@ sudo apt install -y wine32
 # Setup wordlists
 echo "[*] Setting up wordlists..."
 sudo gunzip /usr/share/wordlists/rockyou.txt.gz
+
+# Setup wsgidav
+echo "[*] Setting up wsgidav..."
+sudo apt install -y python3-wsgidav
