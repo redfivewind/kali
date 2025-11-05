@@ -22,6 +22,14 @@ sudo apt install -y bloodhound
 echo "[*] Setting up Chisel..."
 sudo apt install -y chisel
 
+# Setup cloudbrute
+echo "[*] Setting up cloudbrute..."
+sudo apt install -y cloudbrute
+
+# Setup cloud-enum
+echo "[*] Setting up cloud-enum..."
+sudo apt install -y cloud-enum
+
 # Setup crackmapexec
 echo "[*] Setting up crackmapexec..."
 sudo apt install -y crackmapexec
