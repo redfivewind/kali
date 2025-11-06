@@ -67,6 +67,10 @@ sudo apt install -y mingw-w64
 echo "[*] Setting up pacu..."
 sudo apt install -y pacu
 
+# Setup s3-account-search
+echo "[*] Setting up s3-account-search..."
+pipx install s3-account-search
+
 # Setup seclists
 echo "[*] Setting up seclists..."
 sudo apt install -y seclists
