@@ -92,6 +92,10 @@ echo "[*] Setting up Veil..."
 sudo apt install -y veil
 veil --setup
 
+# Setup Wapiti
+echo "[*] Setting up Wapiti..."
+sudo apt install -y wapiti
+
 # Setup Wine
 echo "[*] Setting up Wine..."
 sudo apt install -y wine
