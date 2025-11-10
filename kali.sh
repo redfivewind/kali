@@ -7,7 +7,6 @@ echo "[*] Updating the system..."
 sudo dpkg --add-architecture i386
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt autoremove -y
 
 # Setup awscli
 echo "[*] Setting up awscli..."
@@ -112,3 +111,7 @@ sudo gunzip /usr/share/wordlists/rockyou.txt.gz
 # Setup wsgidav
 echo "[*] Setting up wsgidav..."
 sudo apt install -y python3-wsgidav
+
+# Remove packages that are no longer required
+echo "[*] Remove packages that are no longer required..."
+sudo apt autoremove -y
