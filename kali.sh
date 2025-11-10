@@ -90,9 +90,20 @@ sudo apt install -y subfinder
 echo "[*] Setting up sublist3r..."
 sudo apt install -y sublist3r
 
+# Setup Tilix
+echo "[*] Setting up Tilix..."
+sudo apt install -y dub gettext libgio-2.0-dev-bin
+cd /tmp
+git clone https://github.com/gnunn1/tilix
+cd tilix
+dub build --build=release
+sudo ./install.sh
+cd
+
 # Setup Veil
 echo "[*] Setting up Veil..."
 sudo apt install -y veil
+sudo sed -i 's/"pip" "install" "pefile"/"pip" "install" "-Iv" "pefile==2019.4.18"/g' /usr/share/veil/config/setup.sh
 veil --setup
 
 # Setup Wapiti
