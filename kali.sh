@@ -75,6 +75,10 @@ pipx install s3-account-search
 echo "[*] Setting up seclists..."
 sudo apt install -y seclists
 
+# Setup spice-vdagent
+echo "[*] Setting up spice-vdagent..."
+sudo apt install -y spice-vdagent
+
 # Setup sshuttle
 echo "[*] Setting up sshuttle..."
 sudo apt install -y sshuttle
