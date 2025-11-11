@@ -66,6 +66,8 @@ sudo apt install -y mingw-w64
 echo "[*] Setting up NVIDIA driver & CUDA toolkit..."
 sudo apt install -y nvidia-driver
 sudo apt install -y nvidia-cuda-toolkit
+KERNEL_CMDLINE=$(cat /etc/kernel/cmdline)
+echo "$KERNEL_CMDLINE modprobe.blacklist=nouveau nouveau.modeset=0" | sudo tee /etc/kernel/cmdline
 
 # Setup pacu
 echo "[*] Setting up pacu..."
