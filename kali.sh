@@ -62,6 +62,11 @@ sudo msfdb init
 echo "[*] Setting up mingw-w64..."
 sudo apt install -y mingw-w64
 
+# Setup NVIDIA driver & CUDA toolkit
+echo "[*] Setting up NVIDIA driver & CUDA toolkit..."
+sudo apt install -y nvidia-driver
+sudo apt install -y nvidia-cuda-toolkit
+
 # Setup pacu
 echo "[*] Setting up pacu..."
 sudo apt install -y pacu
