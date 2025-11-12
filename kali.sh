@@ -2,13 +2,6 @@
 echo "[*] Initialising global variables..."
 USER=$(whoami)
 
-# Disable sleep, hibernation, etc.
-echo "[*] Disabling sleep, hibernation, etc., ..."
-sudo systemctl mask hibernate.target
-sudo systemctl mask hybrid-sleep.target
-sudo systemctl mask sleep.target
-sudo systemctl mask suspend.target
-
 # Update system
 echo "[*] Updating the system..."
 sudo dpkg --add-architecture i386
