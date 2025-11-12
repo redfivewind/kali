@@ -53,6 +53,10 @@ sudo apt install -y dnscat2-server
 echo "[*] Setting up the generic Linux headers..."
 sudo apt install -y linux-headers-generic
 
+# Setup hostapd-mana
+echo "[*] Setting up hostapd-mana..."
+sudo apt install -y hostapd-mana
+
 # Setup magic-wormhole
 echo "[*] Setting up magic-wormhole..."
 sudo apt install -y magic-wormhole
