@@ -57,6 +57,10 @@ sudo apt install -y freeradius
 echo "[*] Setting up the generic Linux headers..."
 sudo apt install -y linux-headers-generic
 
+# Setup hostapd
+echo "[*] Setting up hostapd..."
+sudo apt install -y hostapd
+
 # Setup hostapd-mana
 echo "[*] Setting up hostapd-mana..."
 sudo apt install -y hostapd-mana
