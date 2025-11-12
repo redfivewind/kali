@@ -60,6 +60,10 @@ sudo apt install -y dnscat2-server
 echo "[*] Setting up the generic Linux headers..."
 sudo apt install -y linux-headers-generic
 
+# Setup magic-wormhole
+echo "[*] Setting up magic-wormhole..."
+sudo apt install -y magic-wormhole
+
 # Setup Metasploit
 echo "[*] Setting up Metasploit..."
 sudo systemctl enable postgresql --now
