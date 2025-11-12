@@ -49,6 +49,10 @@ sudo apt install -y dnscat2-server
 #sudo usermod -aG docker $USER
 #sudo systemctl enable docker --now
 
+# Setup FreeRADIUS
+echo "[*] Setting up FreeRADIUS..."
+sudo apt install -y freeradius
+
 # Setup generic Linux headers
 echo "[*] Setting up the generic Linux headers..."
 sudo apt install -y linux-headers-generic
