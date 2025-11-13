@@ -7,6 +7,11 @@ echo "[*] Updating the system..."
 sudo dpkg --add-architecture i386
 sudo apt update -y
 sudo apt upgrade -y
+sudo apt autoremove -y
+
+# Setup asleap
+echo "[*] Setting up asleap..."
+sudo apt install -y asleap
 
 # Setup awscli
 echo "[*] Setting up awscli..."
@@ -64,6 +69,10 @@ sudo apt install -y hostapd
 # Setup hostapd-mana
 echo "[*] Setting up hostapd-mana..."
 sudo apt install -y hostapd-mana
+
+# Setup kerbrute
+echo "[*] Setting up kerbrute..."
+sudo pipx install kerbrute
 
 # Setup magic-wormhole
 echo "[*] Setting up magic-wormhole..."
