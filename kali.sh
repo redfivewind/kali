@@ -106,6 +106,10 @@ pipx install s3-account-search
 echo "[*] Setting up seclists..."
 sudo apt install -y seclists
 
+# Setup snmpenum
+echo "[*] Setting up snmpenum..."
+sudo apt install -y snmpenum
+
 # Setup spice-vdagent
 echo "[*] Setting up spice-vdagent..."
 sudo apt install -y spice-vdagent
