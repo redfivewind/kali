@@ -58,9 +58,9 @@ sudo apt install -y dnscat2-server
 echo "[*] Setting up FreeRADIUS..."
 sudo apt install -y freeradius
 
-# Setup generic Linux headers
-echo "[*] Setting up the generic Linux headers..."
-sudo apt install -y linux-headers-generic
+# Setup gitleaks
+echo "[*] Setting up gitleaks..."
+sudo apt install -y gitleaks
 
 # Setup hostapd
 echo "[*] Setting up hostapd..."
@@ -73,6 +73,10 @@ sudo apt install -y hostapd-mana
 # Setup kerbrute
 echo "[*] Setting up kerbrute..."
 sudo pipx install kerbrute
+
+# Setup generic Linux headers
+echo "[*] Setting up the generic Linux headers..."
+sudo apt install -y linux-headers-generic
 
 # Setup magic-wormhole
 echo "[*] Setting up magic-wormhole..."
