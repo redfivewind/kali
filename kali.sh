@@ -1,13 +1,43 @@
 # Initialise global variables
+echo "########################################"
 echo "[*] Initialising global variables..."
+echo "########################################"
 USER=$(whoami)
 
 # Update system
+echo "########################################"
 echo "[*] Updating the system..."
+echo "########################################"
 sudo dpkg --add-architecture i386
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt autoremove -y
+
+# Prepare dependencies
+echo "########################################"
+echo "[*] Preparing dependencies..."
+echo "########################################"
+
+# Setup Docker
+echo "[*] Setting up Docker..."
+sudo apt install -y docker.io
+sudo apt install -y docker-compose
+sudo usermod -aG docker $USER
+sudo systemctl enable docker --now
+
+# Setup generic Linux headers
+echo "[*] Setting up the generic Linux headers..."
+sudo apt install -y linux-headers-generic
+
+# Setup Wine
+echo "[*] Setting up Wine..."
+sudo apt install -y wine
+sudo apt install -y wine32
+
+# Install packages
+echo "########################################"
+echo "[*] Installing packages..."
+echo "########################################"
 
 # Setup asleap
 echo "[*] Setting up asleap..."
@@ -47,13 +77,6 @@ echo "[*] Setting up dnscat2..."
 sudo apt install -y dnscat2-client
 sudo apt install -y dnscat2-server
 
-# Setup Docker
-#echo "[*] Setting up Docker..."
-#sudo apt install -y docker.io
-#sudo apt install -y docker-compose
-#sudo usermod -aG docker $USER
-#sudo systemctl enable docker --now
-
 # Setup FreeRADIUS
 echo "[*] Setting up FreeRADIUS..."
 sudo apt install -y freeradius
@@ -73,10 +96,6 @@ sudo apt install -y hostapd-mana
 # Setup kerbrute
 echo "[*] Setting up kerbrute..."
 sudo pipx install kerbrute
-
-# Setup generic Linux headers
-echo "[*] Setting up the generic Linux headers..."
-sudo apt install -y linux-headers-generic
 
 # Setup magic-wormhole
 echo "[*] Setting up magic-wormhole..."
@@ -150,11 +169,6 @@ veil --setup
 echo "[*] Setting up Wapiti..."
 sudo apt install -y wapiti
 
-# Setup Wine
-echo "[*] Setting up Wine..."
-sudo apt install -y wine
-sudo apt install -y wine32
-
 # Setup wordlists
 echo "[*] Setting up wordlists..."
 sudo gunzip /usr/share/wordlists/rockyou.txt.gz
@@ -163,6 +177,10 @@ sudo gunzip /usr/share/wordlists/rockyou.txt.gz
 echo "[*] Setting up wsgidav..."
 sudo apt install -y python3-wsgidav
 
-# Remove packages that are no longer required
-echo "[*] Remove packages that are no longer required..."
+# Autoremove packages
+echo "########################################"
+echo "[*] Autoremoving packages..."
+echo "########################################"
 sudo apt autoremove -y
+sudo apt clean -y
+sudo apt autoclean -y
