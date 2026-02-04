@@ -85,6 +85,10 @@ sudo apt install -y freeradius
 echo "[*] Setting up gitleaks..."
 sudo apt install -y gitleaks
 
+# Setup hcxtools
+echo "[*] Setting up hcxtools..."
+sudo apt install -y hcxtools
+
 # Setup hostapd
 echo "[*] Setting up hostapd..."
 sudo apt install -y hostapd
