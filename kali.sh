@@ -87,7 +87,9 @@ sudo apt install -y gitleaks
 
 # Setup hcxtools
 echo "[*] Setting up hcxtools..."
+sudo apt install -y hcxdumptool
 sudo apt install -y hcxtools
+sudo apt install -y hcxpcapngtool
 
 # Setup hostapd
 echo "[*] Setting up hostapd..."
