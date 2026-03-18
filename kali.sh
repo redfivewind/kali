@@ -25,6 +25,16 @@ sudo apt install -y docker-compose
 sudo usermod -aG docker $USER
 sudo systemctl enable docker --now
 
+# Setup Go
+echo "[*] Setting up Go..."
+sudo apt install -y golang
+
+export GOROOT=/usr/lib/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+source .bashrc
+
 # Setup generic Linux headers
 echo "[*] Setting up the generic Linux headers..."
 sudo apt install -y linux-headers-generic
