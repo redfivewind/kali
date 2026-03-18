@@ -89,6 +89,10 @@ sudo apt install -y freeradius
 echo "[*] Setting up gitleaks..."
 sudo apt install -y gitleaks
 
+# Setup gospider
+echo "[*] Setting up gospider..."
+sudo apt install -y gospider
+
 # Setup hcxtools
 echo "[*] Setting up hcxtools..."
 sudo apt install -y hcxdumptool
