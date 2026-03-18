@@ -99,6 +99,11 @@ sudo apt install -y hostapd
 echo "[*] Setting up hostapd-mana..."
 sudo apt install -y hostapd-mana
 
+# Setup katana
+echo "[*] Setting up katana..."
+sudo apt install -y python3-pysam
+pipx install katana
+
 # Setup kerbrute
 echo "[*] Setting up kerbrute..."
 sudo pipx install kerbrute
