@@ -55,6 +55,8 @@ sudo apt install -y awscli
 echo "[*] Setting up Bloodhound..."
 sudo apt install -y neo4j
 sudo apt install -y bloodhound
+sudo runuser -u postgres -- psql -c 'ALTER DATABASE postgres REFRESH COLLATION VERSION; ALTER DATABASE template1 REFRESH COLLATION VERSION;'
+bloodhound-setup
 
 # Setup Chisel
 echo "[*] Setting up Chisel..."
