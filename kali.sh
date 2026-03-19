@@ -83,6 +83,10 @@ echo "[*] Setting up dnscat2..."
 sudo apt install -y dnscat2-client
 sudo apt install -y dnscat2-server
 
+# Setup feroxbuster
+echo "[*] Setting up feroxbuster..."
+sudo apt install -y feroxbuster
+
 # Setup FreeRADIUS
 echo "[*] Setting up FreeRADIUS..."
 sudo apt install -y freeradius
