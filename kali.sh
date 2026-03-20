@@ -43,6 +43,10 @@ echo "########################################"
 echo "[*] Installing packages..."
 echo "########################################"
 
+# Setup arjun
+echo "[*] Setting up arjun..."
+sudo apt install -y arjun
+
 # Setup asleap
 echo "[*] Setting up asleap..."
 sudo apt install -y asleap
