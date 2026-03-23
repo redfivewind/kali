@@ -198,6 +198,10 @@ veil --setup
 echo "[*] Setting up Wapiti..."
 sudo apt install -y wapiti
 
+# Setup Wappalyzer
+echo "[*] Setting up Wappalyzer..."
+pipx install wappalyzer
+
 # Setup wordlists
 echo "[*] Setting up wordlists..."
 sudo gunzip /usr/share/wordlists/rockyou.txt.gz
