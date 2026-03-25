@@ -93,7 +93,7 @@ for dep_apt in "${DEP_APT_ARRAY[@]}"; do
     sudo apt install -y $dep_apt
 done
 
-# Install dependencies
+# Configure dependencies
 echo "########################################"
 echo "[*] Configuring dependencies..."
 echo "########################################"
