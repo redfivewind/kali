@@ -43,7 +43,6 @@ PKG_APT_ARRAY=(
     "nvidia-cuda-toolkit"
     "pacu"
     "python3-wsgidav"
-    "s3-account-search"
     "seclists"
     "snmpenum"
     "spice-vdagent"
@@ -57,6 +56,7 @@ PKG_GO_ARRAY=(
 )
 PKG_PIPX_ARRAY=(
     "kerbrute"
+    "s3-account-search"
     "wappalyzer"
 )
 
