@@ -134,15 +134,15 @@ for pkg_apt in "${PKG_APT_ARRAY[@]}"; do
     sudo apt install -y $pkg_apt
 done
 
+for pkg_go in "${PKG_GO_ARRAY[@]}"; do
+    echo "[*] Installing Go package '$pkg_go'..."
+    sudo apt install -y $pkg_go
+done
+
 for pkg_pipx in "${PKG_PIPX_ARRAY[@]}"; do
     echo "[*] Installing PIPX package '$pkg_pipx'..."
     sudo pipx install $pkg_pipx
 done
-
-# Setup katana
-echo "[*] Setting up katana..."
-go install github.com/projectdiscovery/katana/cmd/katana@latest
-sudo mv ~/go/bin/katana /usr/bin
 
 # Setup Tilix
 echo "[*] Setting up Tilix..."
