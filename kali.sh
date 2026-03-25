@@ -1,4 +1,4 @@
-#!/usr/bin/env bashx
+#!/usr/bin/env bash
 
 # Initialise global constants
 echo "########################################"
