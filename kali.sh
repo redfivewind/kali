@@ -1,4 +1,4 @@
-# Initialise global constants
+# Initialise global constantsx
 echo "########################################"
 echo "[*] Initialising global constants..."
 echo "########################################"
