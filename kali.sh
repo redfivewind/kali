@@ -57,15 +57,15 @@ sudo apt install -y awscli
 
 # Setup Bloodhound
 echo "[*] Setting up Bloodhound..."
+
 sudo apt install -y neo4j
-sudo neo4j-admin set-initial-password "$(pwgen -c -n -y -s 32 1)"
+NEO4J_PW=$(pwgen -c -n -y -s 32 1)
+sudo neo4j-admin set-initial-password "$NEO4J_PW"
 sudo systemctl enable neo4j --now
 
 sudo apt install -y bloodhound
 sudo cp /etc/bhapi/bhapi.json /etc/bhapi/bhapi.json.old
-jq --arg pass "$NEO4J_PW" '.neo4j.secret = $secret' /etc/bhapi/bhapi.json | sudo tee /etc/bhapi/bhapi.json
-
-
+jq --arg secret "$NEO4J_PW" '.neo4j.secret = $secret' /etc/bhapi/bhapi.json | sudo tee /etc/bhapi/bhapi.json
 sudo runuser -u postgres -- psql -c 'ALTER DATABASE postgres REFRESH COLLATION VERSION; ALTER DATABASE template1 REFRESH COLLATION VERSION;'
 bloodhound-setup
 
