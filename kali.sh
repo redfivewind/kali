@@ -2,6 +2,7 @@
 echo "########################################"
 echo "[*] Initialising global constants..."
 echo "########################################"
+
 DEP_APT_ARRAY=(
     "docker.io"
     "docker-compose"
@@ -63,12 +64,14 @@ PKG_PIPX_ARRAY=(
 echo "########################################"
 echo "[*] Initialising global variables..."
 echo "########################################"
+
 USER=$(whoami)
 
 # Update system
 echo "########################################"
 echo "[*] Updating the system..."
 echo "########################################"
+
 sudo dpkg --add-architecture i386
 sudo apt update -y
 sudo apt upgrade -y
