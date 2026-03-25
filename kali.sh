@@ -113,10 +113,18 @@ echo "export GOPATH=\$HOME/go" >> ~/.zshrc
 echo "export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin" >> ~/.zshrc
 source ~/.zshrc
 
-# Configure Linux
-echo "[*] Configuring the Linux kernel..."
-KERNEL_CMDLINE=$(cat /etc/kernel/cmdline)
-echo "$KERNEL_CMDLINE modprobe.blacklist=nouveau nouveau.modeset=0" | sudo tee /etc/kernel/cmdline
+# Configure GRUB2
+echo "[*] Configuring GRUB2 (if applicable)..."
+if [ -f /etc/default/grub ]; then
+    sed -i 's/^\(GRUB_CMDLINE_LINUX="[^"]*\)"/\1 modprobe.blacklist=nouveau nouveau.modeset=0"/' /etc/default/grub
+fi
+
+# Configure Linux kernel
+echo "[*] Configuring the Linux kernel (if applicable)..."
+if [ -f /etc/kernel/cmdline ]; then
+    KERNEL_CMDLINE=$(cat /etc/kernel/cmdline)
+    echo "$KERNEL_CMDLINE modprobe.blacklist=nouveau nouveau.modeset=0" | sudo tee /etc/kernel/cmdline
+fi
 
 # Configure Neo4j
 echo "[*] Configuring Neo4j..."
