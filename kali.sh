@@ -177,12 +177,6 @@ echo "########################################"
 echo "[*] Configuring packages..."
 echo "########################################"
 
-# Configure Bloodhound
-echo "[*] Configuring Bloodhound..."
-sudo cp /etc/bhapi/bhapi.json /etc/bhapi/bhapi.json.old
-jq --arg secret "$NEO4J_PW" '.neo4j.secret = $secret' /etc/bhapi/bhapi.json | sudo tee /etc/bhapi/bhapi.json
-bloodhound-setup
-
 # Configure Metasploit
 echo "[*] Configuring Metasploit..."
 sudo msfdb init
@@ -190,7 +184,7 @@ sudo msfdb init
 # Configure Veil
 echo "[*] Configuring Veil..."
 sudo sed -i 's/"pip" "install" "pefile"/"pip" "install" "-Iv" "pefile==2019.4.18"/g' /usr/share/veil/config/setup.sh
-veil --setup --force --silent
+veil --force --silent
 
 # Configure wordlists
 echo "[*] Configuring wordlists..."
