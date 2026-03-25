@@ -34,7 +34,6 @@ PKG_APT_ARRAY=(
     "gospider"
     "hcxdumptool"
     "hcxtools"
-    "hcxpcapngtool"
     "hostapd"
     "hostapd-mana"
     "libgio-2.0-dev-bin"
