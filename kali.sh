@@ -153,8 +153,8 @@ echo "[*] Installing Bloodhound Community Edition (BHCE)..."
 cd /tmp
 wget https://github.com/SpecterOps/bloodhound-cli/releases/latest/download/bloodhound-cli-linux-amd64.tar.gz
 tar -xvzf bloodhound-cli-linux-amd64.tar.gz
-./bloodhound-cli install
-echo -n "admin" | ./bloodhound-cli resetpwd -
+sudo ./bloodhound-cli install
+echo -n "admin" | sudo ./bloodhound-cli resetpwd -
 cd
 
 # Install Tilix
