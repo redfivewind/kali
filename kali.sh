@@ -10,7 +10,6 @@ DEP_APT_ARRAY=(
     "docker-compose"
     "golang"
     "linux-headers-generic"
-    "neo4j"
     "pwgen"
     "wine"
     "wine32"
@@ -19,7 +18,6 @@ PKG_APT_ARRAY=(
     "arjun"
     "asleap"
     "awscli"
-    "bloodhound"
     "chisel"
     "cloudbrute"
     "cloud-enum"
@@ -156,8 +154,17 @@ for pkg_pipx in "${PKG_PIPX_ARRAY[@]}"; do
     sudo pipx install $pkg_pipx
 done
 
-# Setup Tilix
-echo "[*] Setting up Tilix..."
+# Install Bloodhound Community Edition (BHCE)
+echo "[*] Installing Bloodhound Community Edition (BHCE)..."
+cd /tmp
+wget https://github.com/SpecterOps/bloodhound-cli/releases/latest/download/bloodhound-cli-linux-amd64.tar.gz
+tar -xvzf bloodhound-cli-linux-amd64.tar.gz
+./bloodhound-cli install
+echo -n "admin" | ./bloodhound-cli resetpwd -
+cd
+
+# Install Tilix
+echo "[*] Installing Tilix..."
 cd /tmp
 git clone https://github.com/gnunn1/tilix
 cd tilix
