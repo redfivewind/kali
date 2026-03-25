@@ -134,8 +134,8 @@ sudo systemctl enable neo4j --now
 
 # Configure PostgreSQL
 echo "[*] Configuring PostgreSQL..."
-sudo runuser -u postgres -- psql -c 'ALTER DATABASE postgres REFRESH COLLATION VERSION; ALTER DATABASE template1 REFRESH COLLATION VERSION;'
 sudo systemctl enable postgresql --now
+sudo runuser -u postgres -- psql -c 'ALTER DATABASE postgres REFRESH COLLATION VERSION; ALTER DATABASE template1 REFRESH COLLATION VERSION;'
 
 # Install packages
 echo "########################################"
