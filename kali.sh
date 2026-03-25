@@ -49,6 +49,7 @@ PKG_APT_ARRAY=(
     "sshuttle"
     "subfinder"
     "sublist3r"
+    "veil"
     "wapiti"
 )
 PKG_GO_ARRAY=(
