@@ -23,7 +23,6 @@ PKG_APT_ARRAY=(
     "chisel"
     "cloudbrute"
     "cloud-enum"
-    "crackmapexec"
     "dkms"
     "dnscat2-client"
     "dnscat2-server"
