@@ -123,12 +123,6 @@ if [ -f /etc/kernel/cmdline ]; then
     echo "$KERNEL_CMDLINE modprobe.blacklist=nouveau nouveau.modeset=0" | sudo tee /etc/kernel/cmdline
 fi
 
-# Configure Neo4j
-echo "[*] Configuring Neo4j..."
-NEO4J_PW=$(pwgen -c -n -y -s 32 1)
-sudo neo4j-admin set-initial-password "$NEO4J_PW"
-sudo systemctl enable neo4j --now
-
 # Configure PostgreSQL
 echo "[*] Configuring PostgreSQL..."
 sudo systemctl enable postgresql --now
