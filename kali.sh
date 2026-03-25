@@ -119,8 +119,8 @@ sudo apt install -y hostapd-mana
 
 # Setup katana
 echo "[*] Setting up katana..."
-sudo apt install -y python3-pysam
-pipx install katana
+go install github.com/projectdiscovery/katana/cmd/katana@latest
+sudo mv ~/go/bin/katana /usr/bin
 
 # Setup kerbrute
 echo "[*] Setting up kerbrute..."
