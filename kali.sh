@@ -1,4 +1,4 @@
-#!/usr/bin/env zshx
+#!/usr/bin/env zsh
 
 # Initialise global constants
 echo "########################################"
