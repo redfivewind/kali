@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Initialise global constants
 echo "########################################"
 echo "[*] Initialising global constants..."
