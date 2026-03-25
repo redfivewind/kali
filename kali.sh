@@ -2,7 +2,7 @@
 echo "########################################"
 echo "[*] Initialising global constants..."
 echo "########################################"
-DEP_ARRAY=(
+DEP_APT_ARRAY=(
     "docker.io"
     "docker-compose"
     "golang"
@@ -12,7 +12,7 @@ DEP_ARRAY=(
     "wine"
     "wine32"
 )
-PKG_ARRAY=(
+PKG_APT_ARRAY=(
     "arjun"
     "asleap"
     "awscli"
@@ -38,6 +38,11 @@ PKG_ARRAY=(
     "libgio-2.0-dev-bin"
     "magic-wormhole"
     "mingw-w64"
+    "nvidia-driver"
+    "nvidia-cuda-toolkit"
+    "pacu"
+    "python3-wsgidav"
+    "s3-account-search"
     "seclists"
     "snmpenum"
     "spice-vdagent"
@@ -45,7 +50,13 @@ PKG_ARRAY=(
     "subfinder"
     "sublist3r"
     "wapiti"
-    "python3-wsgidav"
+)
+PKG_GO_ARRAY=(
+    "github.com/projectdiscovery/katana/cmd/katana@latest"
+)
+PKG_PIPX_ARRAY=(
+    "kerbrute"
+    "wappalyzer"
 )
 
 # Initialise global variables
@@ -72,9 +83,9 @@ echo "########################################"
 echo "[*] Installing dependencies..."
 echo "########################################"
 
-for dep in "${DEP_ARRAY[@]}"; do
-    echo "[*] Installing dependency '$dep'..."
-    sudo apt install -y $dep
+for dep_apt in "${DEP_APT_ARRAY[@]}"; do
+    echo "[*] Installing APT dependency '$dep_apt'..."
+    sudo apt install -y $dep_apt
 done
 
 # Install dependencies
@@ -87,8 +98,18 @@ echo "[*] Configuring Docker..."
 sudo usermod -aG docker $USER
 sudo systemctl enable docker --now
 
+# Configure Go
+echo "[*] Configuring Go..."
+echo "export GOROOT=/usr/local/go" >> ~/.bashrc
+echo "export GOPATH=\$HOME/go" >> ~/.bashrc
+echo "export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin" >> ~/.bashrc
+echo "export GOROOT=/usr/local/go" >> ~/.zshrc
+echo "export GOPATH=\$HOME/go" >> ~/.zshrc
+echo "export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin" >> ~/.zshrc
+source ~/.zshrc
+
 # Configure Linux
-echo "[*] Configuring Linux..."
+echo "[*] Configuring the Linux kernel..."
 KERNEL_CMDLINE=$(cat /etc/kernel/cmdline)
 echo "$KERNEL_CMDLINE modprobe.blacklist=nouveau nouveau.modeset=0" | sudo tee /etc/kernel/cmdline
 
@@ -108,32 +129,20 @@ echo "########################################"
 echo "[*] Installing packages..."
 echo "########################################"
 
-for pkg in "${PKG_ARRAY[@]}"; do
-    echo "[*] Installing package '$pkg'..."
-    sudo apt install -y $pkg
+for pkg_apt in "${PKG_APT_ARRAY[@]}"; do
+    echo "[*] Installing APT package '$pkg_apt'..."
+    sudo apt install -y $pkg_apt
+done
+
+for pkg_pipx in "${PKG_PIPX_ARRAY[@]}"; do
+    echo "[*] Installing PIPX package '$pkg_pipx'..."
+    sudo pipx install $pkg_pipx
 done
 
 # Setup katana
 echo "[*] Setting up katana..."
 go install github.com/projectdiscovery/katana/cmd/katana@latest
 sudo mv ~/go/bin/katana /usr/bin
-
-# Setup kerbrute
-echo "[*] Setting up kerbrute..."
-sudo pipx install kerbrute
-
-# Setup NVIDIA driver & CUDA toolkit
-echo "[*] Setting up NVIDIA driver & CUDA toolkit..."
-sudo apt install -y nvidia-driver
-sudo apt install -y nvidia-cuda-toolkit
-
-# Setup pacu
-echo "[*] Setting up pacu..."
-sudo apt install -y pacu
-
-# Setup s3-account-search
-echo "[*] Setting up s3-account-search..."
-pipx install s3-account-search
 
 # Setup Tilix
 echo "[*] Setting up Tilix..."
@@ -143,11 +152,6 @@ cd tilix
 dub build --build=release
 sudo ./install.sh
 cd
-
-
-# Setup Wappalyzer
-echo "[*] Setting up Wappalyzer..."
-pipx install wappalyzer
 
 # Autoremove packages
 echo "########################################"
