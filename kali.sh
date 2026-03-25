@@ -147,7 +147,7 @@ done
 
 for pkg_go in "${PKG_GO_ARRAY[@]}"; do
     echo "[*] Installing Go package '$pkg_go'..."
-    sudo apt install -y $pkg_go
+    sudo go install $pkg_go
 done
 
 for pkg_pipx in "${PKG_PIPX_ARRAY[@]}"; do
