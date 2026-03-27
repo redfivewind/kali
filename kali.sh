@@ -64,6 +64,7 @@ echo "########################################"
 echo "[*] Initialising global variables..."
 echo "########################################"
 
+TOOLS_DIR="/home/$(whoami)"
 USER=$(whoami)
 
 # Update system
@@ -150,16 +151,30 @@ done
 
 # Install Bloodhound Community Edition (BHCE)
 echo "[*] Installing Bloodhound Community Edition (BHCE)..."
-cd /tmp
+BLOODHOUND_DIR="$TOOLS_DIR/tools/bloodhound"
+mkdir -p "$BLOODHOUND_DIR"
+cd "$BLOODHOUND_DIR"
 wget https://github.com/SpecterOps/bloodhound-cli/releases/latest/download/bloodhound-cli-linux-amd64.tar.gz
 tar -xvzf bloodhound-cli-linux-amd64.tar.gz
 sudo ./bloodhound-cli install
 echo -n "admin" | sudo ./bloodhound-cli resetpwd -
 cd
 
+# Install Sysreptor
+echo "[*] Installing SysReptor..."
+SYSREPTOR_DIR="$TOOLS_DIR/sysreptor"
+mkdir -p $SYSREPTOR_DIR
+cd $SYSREPTOR_DIR
+curl -s https://docs.sysreptor.com/install.sh | bash
+cd sysreptor/deploy
+docker compose up -d
+cd
+
 # Install Tilix
 echo "[*] Installing Tilix..."
-cd /tmp
+TILIX_DIR="BLOODHOUND_DIR="$TOOLS_DIR/tilix"
+mkdir -p "$TILIX_DIR"
+cd "$TILIX_DIR"
 git clone https://github.com/gnunn1/tilix
 cd tilix
 dub build --build=release
