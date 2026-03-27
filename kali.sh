@@ -165,9 +165,7 @@ echo "[*] Installing SysReptor..."
 SYSREPTOR_DIR="$TOOLS_DIR/sysreptor"
 mkdir -p $SYSREPTOR_DIR
 cd $SYSREPTOR_DIR
-curl -s https://docs.sysreptor.com/install.sh | bash
-cd sysreptor/deploy
-docker compose up -d
+bash <(curl -s https://docs.sysreptor.com/install.sh)
 cd
 
 # Install Tilix
