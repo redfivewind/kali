@@ -1,63 +1,63 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 # Initialise global constants
 echo "########################################"
 echo "[*] Initialising global constants..."
 echo "########################################"
 
-DEP_APT_ARRAY=(
-    "docker.io"
-    "docker-compose"
-    "golang"
-    "linux-headers-generic"
-    "pwgen"
-    "wine"
-    "wine32"
-)
-PKG_APT_ARRAY=(
-    "arjun"
-    "asleap"
-    "awscli"
-    "chisel"
-    "cloudbrute"
-    "cloud-enum"
-    "dkms"
-    "dnscat2-client"
-    "dnscat2-server"
-    "dub"
-    "feroxbuster"
-    "freeradius"
-    "gettext"
-    "gitleaks"
-    "gospider"
-    "hcxdumptool"
-    "hcxtools"
-    "hostapd"
-    "hostapd-mana"
-    "libgio-2.0-dev-bin"
-    "magic-wormhole"
-    "mingw-w64"
-    "nvidia-driver"
-    "nvidia-cuda-toolkit"
-    "pacu"
-    "python3-wsgidav"
-    "seclists"
-    "snmpenum"
-    "spice-vdagent"
-    "sshuttle"
-    "subfinder"
-    "sublist3r"
-    "veil"
-    "wapiti"
-)
-PKG_GO_ARRAY=(
-    "github.com/projectdiscovery/katana/cmd/katana@latest"
-    "github.com/ropnop/kerbrute@latest"
-)
-PKG_PIPX_ARRAY=(
-    "s3-account-search"
-    "wappalyzer"
-)
+DEP_APT_ARRAY="\
+    docker.io\
+    docker-compose\
+    golang\
+    linux-headers-generic\
+    pwgen\
+    wine\
+    wine32\
+"
+PKG_APT_ARRAY="
+    arjun\
+    asleap\
+    awscli\
+    chisel\
+    cloudbrute\
+    cloud-enum\
+    dkms\
+    dnscat2-client\
+    dnscat2-server\
+    dub\
+    feroxbuster\
+    freeradius\
+    gettext\
+    gitleaks\
+    gospider\
+    hcxdumptool\
+    hcxtools\
+    hostapd\
+    hostapd-mana\
+    libgio-2.0-dev-bin\
+    magic-wormhole\
+    mingw-w64\
+    nvidia-driver\
+    nvidia-cuda-toolkit\
+    pacu\
+    python3-wsgidav\
+    seclists\
+    snmpenum\
+    spice-vdagent\
+    sshuttle\
+    subfinder\
+    sublist3r\
+    veil\
+    wapiti\
+"
+PKG_GO_ARRAY="
+    github.com/projectdiscovery/katana/cmd/katana@latest\
+    github.com/ropnop/kerbrute@latest\
+"
+PKG_PIPX_ARRAY="
+    s3-account-search\
+    wappalyzer\
+"
 
 # Initialise global variables
 echo "########################################"
@@ -86,7 +86,7 @@ echo "########################################"
 echo "[*] Installing dependencies..."
 echo "########################################"
 
-for dep_apt in "${DEP_APT_ARRAY[@]}"; do
+for dep_apt in "$DEP_APT_ARRAY"; do
     echo "[*] Installing APT dependency '$dep_apt'..."
     sudo apt install -y $dep_apt
 done
@@ -109,7 +109,6 @@ echo "export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin" >> ~/.bashrc
 echo "export GOROOT=/usr/local/go" >> ~/.zshrc
 echo "export GOPATH=\$HOME/go" >> ~/.zshrc
 echo "export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin" >> ~/.zshrc
-source ~/.zshrc
 
 # Configure GRUB2
 echo "[*] Configuring GRUB2 (if applicable)..."
@@ -134,17 +133,17 @@ echo "########################################"
 echo "[*] Installing packages..."
 echo "########################################"
 
-for pkg_apt in "${PKG_APT_ARRAY[@]}"; do
+for pkg_apt in "$PKG_APT_ARRAY"; do
     echo "[*] Installing APT package '$pkg_apt'..."
     sudo apt install -y $pkg_apt
 done
 
-for pkg_go in "${PKG_GO_ARRAY[@]}"; do
+for pkg_go in "$PKG_GO_ARRAY"; do
     echo "[*] Installing Go package '$pkg_go'..."
     sudo go install $pkg_go
 done
 
-for pkg_pipx in "${PKG_PIPX_ARRAY[@]}"; do
+for pkg_pipx in "$PKG_PIPX_ARRAY"; do
     echo "[*] Installing PIPX package '$pkg_pipx'..."
     sudo pipx install $pkg_pipx
 done
