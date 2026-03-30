@@ -52,9 +52,9 @@ PKG_APT_ARRAY=(
 )
 PKG_GO_ARRAY=(
     "github.com/projectdiscovery/katana/cmd/katana@latest"
+    "github.com/ropnop/kerbrute@latest"
 )
 PKG_PIPX_ARRAY=(
-    "kerbrute"
     "s3-account-search"
     "wappalyzer"
 )
