@@ -14,7 +14,7 @@ DEP_APT_ARRAY="\
     wine\
     wine32\
 "
-PKG_APT_ARRAY="
+PKG_APT_ARRAY="\
     arjun\
     asleap\
     awscli\
@@ -50,11 +50,11 @@ PKG_APT_ARRAY="
     veil\
     wapiti\
 "
-PKG_GO_ARRAY="
+PKG_GO_ARRAY="\
     github.com/projectdiscovery/katana/cmd/katana@latest\
     github.com/ropnop/kerbrute@latest\
 "
-PKG_PIPX_ARRAY="
+PKG_PIPX_ARRAY="\
     s3-account-search\
     wappalyzer\
 "
