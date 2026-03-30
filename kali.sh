@@ -86,7 +86,7 @@ echo "########################################"
 echo "[*] Installing dependencies..."
 echo "########################################"
 
-for dep_apt in "$DEP_APT_ARRAY"; do
+for dep_apt in $DEP_APT_ARRAY; do
     echo "[*] Installing APT dependency '$dep_apt'..."
     sudo apt install -y $dep_apt
 done
@@ -133,17 +133,17 @@ echo "########################################"
 echo "[*] Installing packages..."
 echo "########################################"
 
-for pkg_apt in "$PKG_APT_ARRAY"; do
+for pkg_apt in $PKG_APT_ARRAY; do
     echo "[*] Installing APT package '$pkg_apt'..."
     sudo apt install -y $pkg_apt
 done
 
-for pkg_go in "$PKG_GO_ARRAY"; do
+for pkg_go in $PKG_GO_ARRAY; do
     echo "[*] Installing Go package '$pkg_go'..."
     sudo go install $pkg_go
 done
 
-for pkg_pipx in "$PKG_PIPX_ARRAY"; do
+for pkg_pipx in $PKG_PIPX_ARRAY; do
     echo "[*] Installing PIPX package '$pkg_pipx'..."
     sudo pipx install $pkg_pipx
 done
