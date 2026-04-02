@@ -35,6 +35,7 @@ PKG_APT_ARRAY="\
     hostapd\
     hostapd-mana\
     libgio-2.0-dev-bin\
+    ltrace\
     magic-wormhole\
     mingw-w64\
     nvidia-driver\
@@ -45,6 +46,7 @@ PKG_APT_ARRAY="\
     snmpenum\
     spice-vdagent\
     sshuttle\
+    strace\
     subfinder\
     sublist3r\
     veil\
