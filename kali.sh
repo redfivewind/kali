@@ -171,7 +171,7 @@ cd
 
 # Install Tilix
 echo "[*] Installing Tilix..."
-TILIX_DIR="BLOODHOUND_DIR="$TOOLS_DIR/tilix"
+TILIX_DIR="$TOOLS_DIR/tilix"
 mkdir -p "$TILIX_DIR"
 cd "$TILIX_DIR"
 git clone https://github.com/gnunn1/tilix
