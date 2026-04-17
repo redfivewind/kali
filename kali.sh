@@ -115,7 +115,7 @@ echo "export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin" >> ~/.zshrc
 # Configure GRUB2
 echo "[*] Configuring GRUB2 (if applicable)..."
 if [ -f /etc/default/grub ]; then
-    sed -i "s/^\GRUB_CMDLINE_LINUX=\"/&rd.driver.blacklist=nouveau modprobe.blacklist=nouveau /" /etc/default/grub
+    sed -i "s/^\GRUB_CMDLINE_LINUX_DEFAULT=\"/&rd.driver.blacklist=nouveau modprobe.blacklist=nouveau /" /etc/default/grub
 fi
 
 # Configure Linux kernel
