@@ -122,7 +122,7 @@ fi
 echo "[*] Configuring the Linux kernel (if applicable)..."
 if [ -f /etc/kernel/cmdline ]; then
     KERNEL_CMDLINE=$(cat /etc/kernel/cmdline)
-    echo "$KERNEL_CMDLINE modprobe.blacklist=nouveau nouveau.modeset=0" | sudo tee /etc/kernel/cmdline
+    echo "$KERNEL_CMDLINE modprobe.blacklist=nouveau rd.driver.blacklist=nouveau" | sudo tee /etc/kernel/cmdline
 fi
 
 # Configure PostgreSQL
